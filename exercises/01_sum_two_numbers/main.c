@@ -15,10 +15,9 @@ void print_test_result(int index, const char *input, const char *expected, const
 }
 
 int solve(int a, int b) {
-    // TODO: implemente a logica deste exercicio.
-    (void)a;
-    (void)b;
-    return 0;
+    int soma = a + b;
+
+    return soma;
 }
 
 void run_tests(void) {
