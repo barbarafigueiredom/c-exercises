@@ -15,11 +15,9 @@ void print_test_result(int index, const char *input, const char *expected, const
 }
 
 void solve(int width, int height, int *area, int *perimeter) {
-    // TODO: implemente a logica deste exercicio.
-    (void)width;
-    (void)height;
-    (void)area;
-    (void)perimeter;
+ 
+    *area = width * height;
+    *perimeter = (2 * width) + (2 * height);
 }
 
 void run_tests(void) {
