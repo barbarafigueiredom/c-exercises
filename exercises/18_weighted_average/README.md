@@ -38,4 +38,9 @@ O `main(...)` deste exercicio ja imprime a resposta com duas casas decimais para
 4. Rode as verificacoes predefinidas com `./program --test`.
 5. Se quiser consultar a resposta comentada, abra `solution.c`.
 
+**Comando unico a partir da pasta raiz do projeto**
+```bash
+gcc -Wall -Wextra -std=c11 ./exercises/18_weighted_average/main.c -o ./exercises/18_weighted_average/program && ./exercises/18_weighted_average/program --test
+```
+
 O arquivo `main.c` e o exercicio para resolver. O arquivo `solution.c` contem uma solucao comentada em PT-BR.

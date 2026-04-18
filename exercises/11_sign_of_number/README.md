@@ -31,4 +31,9 @@ Voce deve retornar uma string com a resposta, como `"EVEN"`, `"ODD"`, `"POSITIVE
 4. Rode as verificacoes predefinidas com `./program --test`.
 5. Se quiser consultar a resposta comentada, abra `solution.c`.
 
+**Comando unico a partir da pasta raiz do projeto**
+```bash
+gcc -Wall -Wextra -std=c11 ./exercises/11_sign_of_number/main.c -o ./exercises/11_sign_of_number/program && ./exercises/11_sign_of_number/program --test
+```
+
 O arquivo `main.c` e o exercicio para resolver. O arquivo `solution.c` contem uma solucao comentada em PT-BR.

@@ -31,4 +31,9 @@ Voce deve calcular o resultado pedido no enunciado e retornar um unico valor int
 4. Rode as verificacoes predefinidas com `./program --test`.
 5. Se quiser consultar a resposta comentada, abra `solution.c`.
 
+**Comando unico a partir da pasta raiz do projeto**
+```bash
+gcc -Wall -Wextra -std=c11 ./exercises/02_subtract_two_numbers/main.c -o ./exercises/02_subtract_two_numbers/program && ./exercises/02_subtract_two_numbers/program --test
+```
+
 O arquivo `main.c` e o exercicio para resolver. O arquivo `solution.c` contem uma solucao comentada em PT-BR.

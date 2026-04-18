@@ -35,4 +35,9 @@ Voce deve calcular o resultado pedido e retornar um valor inteiro usando `return
 4. Rode as verificacoes predefinidas com `./program --test`.
 5. Se quiser consultar a resposta comentada, abra `solution.c`.
 
+**Comando unico a partir da pasta raiz do projeto**
+```bash
+gcc -Wall -Wextra -std=c11 ./exercises/21_factorial/main.c -o ./exercises/21_factorial/program && ./exercises/21_factorial/program --test
+```
+
 O arquivo `main.c` e o exercicio para resolver. O arquivo `solution.c` contem uma solucao comentada em PT-BR.

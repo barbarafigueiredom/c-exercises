@@ -35,4 +35,9 @@ Voce deve calcular o resultado pedido no enunciado e retornar um unico valor int
 4. Rode as verificacoes predefinidas com `./program --test`.
 5. Se quiser consultar a resposta comentada, abra `solution.c`.
 
+**Comando unico a partir da pasta raiz do projeto**
+```bash
+gcc -Wall -Wextra -std=c11 ./exercises/25_power_loop/main.c -o ./exercises/25_power_loop/program && ./exercises/25_power_loop/program --test
+```
+
 O arquivo `main.c` e o exercicio para resolver. O arquivo `solution.c` contem uma solucao comentada em PT-BR.

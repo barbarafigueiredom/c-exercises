@@ -2197,6 +2197,7 @@ def render_exercise_readme(meta: dict) -> str:
 
 def render_exercise_readme_pt_br(meta: dict) -> str:
     item = PT_BR_DESCRIPTIONS[meta["slug"]]
+    exercise_path = f"./exercises/{meta['slug']}"
     implementation_by_pattern = {
         "int_binary": [
             "Na funcao `solve(int a, int b)`, os dois valores de entrada ja chegam prontos pelos parametros `a` e `b`.",
@@ -2387,6 +2388,11 @@ def render_exercise_readme_pt_br(meta: dict) -> str:
         "3. Compile com `gcc -Wall -Wextra -std=c11 main.c -o program`.",
         "4. Rode as verificacoes predefinidas com `./program --test`.",
         "5. Se quiser consultar a resposta comentada, abra `solution.c`.",
+        "",
+        "**Comando unico a partir da pasta raiz do projeto**",
+        "```bash",
+        f"gcc -Wall -Wextra -std=c11 {exercise_path}/main.c -o {exercise_path}/program && {exercise_path}/program --test",
+        "```",
         "",
         "O arquivo `main.c` e o exercicio para resolver. O arquivo `solution.c` contem uma solucao comentada em PT-BR.",
     ])
