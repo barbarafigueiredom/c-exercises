@@ -2197,6 +2197,154 @@ def render_exercise_readme(meta: dict) -> str:
 
 def render_exercise_readme_pt_br(meta: dict) -> str:
     item = PT_BR_DESCRIPTIONS[meta["slug"]]
+    implementation_by_pattern = {
+        "int_binary": [
+            "Na funcao `solve(int a, int b)`, os dois valores de entrada ja chegam prontos pelos parametros `a` e `b`.",
+            "Voce deve calcular o resultado pedido no enunciado e retornar um unico valor inteiro com `return`.",
+        ],
+        "unary_pair": [
+            "Na funcao `solve(int number, int *first, int *second)`, o valor de entrada chega pelo parametro `number`.",
+            "Voce deve colocar as duas respostas nas variaveis apontadas por `first` e `second`.",
+            "Use `*first = ...;` e `*second = ...;` para guardar os resultados.",
+        ],
+        "average_of_three": [
+            "Na funcao `solve(double a, double b, double c)`, os tres valores de entrada ja chegam pelos parametros.",
+            "Voce deve calcular o resultado pedido e retornar um valor decimal com `return`.",
+            "Voce nao precisa formatar a quantidade de casas decimais dentro de `solve(...)`.",
+            "O `main(...)` deste exercicio ja imprime a resposta com duas casas decimais para voce.",
+        ],
+        "int_ternary": [
+            "Na funcao `solve(int a, int b, int c)`, os tres valores de entrada ja chegam pelos parametros.",
+            "Voce deve calcular o resultado pedido e retornar um unico valor inteiro com `return`.",
+        ],
+        "int_pair_from_binary": [
+            "Na funcao `solve(int first_input, int second_input, int *first_output, int *second_output)`, os dois valores de entrada chegam pelos dois primeiros parametros.",
+            "Voce deve guardar as duas respostas nas variaveis apontadas por `first_output` e `second_output`.",
+            "Use `*first_output = ...;` e `*second_output = ...;`.",
+        ],
+        "rectangle": [
+            "Na funcao `solve(int width, int height, int *area, int *perimeter)`, a largura e a altura chegam pelos parametros `width` e `height`.",
+            "Voce deve guardar a area em `*area` e o perimetro em `*perimeter`.",
+        ],
+        "double_unary": [
+            "Na funcao `solve(double value)`, o valor de entrada ja chega pelo parametro `value`.",
+            "Voce deve calcular o resultado pedido e retornar um valor decimal com `return`.",
+            "Voce nao precisa formatar a quantidade de casas decimais dentro de `solve(...)`.",
+            "O `main(...)` deste exercicio ja imprime a resposta com duas casas decimais para voce.",
+        ],
+        "seconds_to_hms": [
+            "Na funcao `solve(int total_seconds, int *hours, int *minutes, int *seconds)`, o total de segundos chega em `total_seconds`.",
+            "Voce deve separar a resposta e guardar cada parte em `*hours`, `*minutes` e `*seconds`.",
+        ],
+        "text_from_int": [
+            "Na funcao `solve(int value)`, o numero de entrada ja chega pelo parametro `value`.",
+            "Voce deve retornar uma string com a resposta, como `\"EVEN\"`, `\"ODD\"`, `\"POSITIVE\"`, `\"NEGATIVE\"` ou `\"ZERO\"`.",
+        ],
+        "binary_percentage": [
+            "Na funcao `solve(double amount, double percentage)`, os valores de entrada ja chegam pelos parametros.",
+            "Voce deve calcular o resultado pedido e retornar um valor decimal com `return`.",
+            "Voce nao precisa formatar a quantidade de casas decimais dentro de `solve(...)`.",
+            "O `main(...)` deste exercicio ja imprime a resposta com duas casas decimais para voce.",
+        ],
+        "simple_interest": [
+            "Na funcao `solve(double principal, double rate, double time)`, os tres valores ja chegam pelos parametros.",
+            "Voce deve calcular o juros simples e retornar o resultado com `return`.",
+            "Voce nao precisa formatar a quantidade de casas decimais dentro de `solve(...)`.",
+            "O `main(...)` deste exercicio ja imprime a resposta com duas casas decimais para voce.",
+        ],
+        "multiplication_table": [
+            "Na funcao `solve(int number, char *output, size_t output_size)`, o numero da tabuada chega em `number`.",
+            "Voce deve montar o texto da resposta dentro de `output`, respeitando o tamanho maximo informado por `output_size`.",
+            "A resposta final deve ficar pronta para ser impressa exatamente como os testes esperam.",
+        ],
+        "weighted_average": [
+            "Na funcao `solve(...)`, todas as notas e pesos ja chegam pelos parametros.",
+            "Voce deve calcular a media ponderada e retornar um valor decimal com `return`.",
+            "Voce nao precisa formatar a quantidade de casas decimais dentro de `solve(...)`.",
+            "O `main(...)` deste exercicio ja imprime a resposta com duas casas decimais para voce.",
+        ],
+        "unary_int": [
+            "Na funcao `solve(int value)`, o valor de entrada ja chega pelo parametro `value`.",
+            "Voce deve calcular o resultado pedido e retornar um unico valor inteiro com `return`.",
+        ],
+        "unary_ull": [
+            "Na funcao `solve(int value)`, o valor de entrada ja chega pelo parametro `value`.",
+            "Voce deve calcular o resultado pedido e retornar um valor inteiro usando `return`.",
+        ],
+    }
+    formula_by_slug = {
+        "04_average_of_three": [
+            "A media aritmetica de tres numeros e calculada somando os tres valores e dividindo o total por 3.",
+            "Formula: `(a + b + c) / 3`.",
+        ],
+        "05_rectangle_area_perimeter": [
+            "A area de um retangulo e calculada multiplicando largura por altura.",
+            "Formula da area: `largura * altura`.",
+            "O perimetro de um retangulo e a soma de todos os lados.",
+            "Formula do perimetro: `2 * largura + 2 * altura`.",
+        ],
+        "06_circle_area": [
+            "A area do circulo e calculada multiplicando PI pelo raio ao quadrado.",
+            "Neste exercicio, use `PI = 3.14159`.",
+            "Formula: `PI * raio * raio`.",
+        ],
+        "07_celsius_to_fahrenheit": [
+            "Para transformar Celsius em Fahrenheit, multiplique a temperatura por 9, divida por 5 e depois some 32.",
+            "Formula: `(C * 9 / 5) + 32`.",
+        ],
+        "08_fahrenheit_to_celsius": [
+            "Para transformar Fahrenheit em Celsius, subtraia 32 da temperatura, multiplique por 5 e divida por 9.",
+            "Formula: `(F - 32) * 5 / 9`.",
+        ],
+        "09_seconds_to_hms": [
+            "Para separar segundos em horas, minutos e segundos, primeiro descubra quantas horas cabem no total.",
+            "Depois use o resto para descobrir os minutos e o que sobrar sera a quantidade final de segundos.",
+        ],
+        "14_simple_interest": [
+            "O juros simples e calculado multiplicando capital, taxa e tempo, e depois dividindo por 100.",
+            "Formula: `(capital * taxa * tempo) / 100`.",
+        ],
+        "15_salary_bonus": [
+            "Para calcular o bonus, pegue a porcentagem do salario base e depois some esse valor ao salario original.",
+            "Formula do bonus: `salario * porcentagem / 100`.",
+            "Formula final: `salario + bonus`.",
+        ],
+        "16_discount_price": [
+            "Para calcular o desconto, pegue a porcentagem do preco original e depois subtraia esse valor do preco inicial.",
+            "Formula do desconto: `preco * porcentagem / 100`.",
+            "Formula final: `preco - desconto`.",
+        ],
+        "18_weighted_average": [
+            "Na media ponderada, cada nota e multiplicada pelo seu peso.",
+            "Depois some todos os resultados e divida pela soma dos pesos.",
+            "Formula: `(nota1*peso1 + nota2*peso2 + nota3*peso3) / (peso1 + peso2 + peso3)`.",
+        ],
+        "20_remainder_of_division": [
+            "O resto da divisao e o valor que sobra depois de dividir um numero pelo outro.",
+            "Em C, isso pode ser calculado com o operador `%`.",
+        ],
+        "21_factorial": [
+            "O fatorial de um numero e calculado multiplicando esse numero por todos os inteiros positivos menores que ele ate chegar em 1.",
+            "Exemplo: `5! = 5 * 4 * 3 * 2 * 1`.",
+        ],
+        "22_fibonacci": [
+            "Na sequencia de Fibonacci, cada numero novo e a soma dos dois anteriores.",
+            "Comeco da sequencia: `0, 1, 1, 2, 3, 5, 8...`.",
+        ],
+        "23_sum_1_to_n": [
+            "Voce deve somar todos os inteiros de 1 ate `n`.",
+            "Exemplo: se `n = 5`, entao a soma e `1 + 2 + 3 + 4 + 5 = 15`.",
+        ],
+        "24_count_digits": [
+            "Para contar os digitos de um numero inteiro, voce pode dividir o numero por 10 varias vezes ate ele chegar a 0.",
+            "Cada divisao remove o ultimo digito e aumenta a contagem em 1.",
+        ],
+        "25_power_loop": [
+            "Uma potencia inteira pode ser calculada multiplicando a base por ela mesma varias vezes.",
+            "Exemplo: `2^5 = 2 * 2 * 2 * 2 * 2`.",
+        ],
+    }
+    implementation_lines = implementation_by_pattern[meta["pattern"]]
     lines = [
         f"# {item['title']}",
         "",
@@ -2220,16 +2368,28 @@ def render_exercise_readme_pt_br(meta: dict) -> str:
         item["example_output"],
         "```",
         "",
+    ]
+    if meta["slug"] in formula_by_slug:
+        lines.extend([
+            "**Como calcular**",
+            *formula_by_slug[meta["slug"]],
+            "",
+        ])
+    lines.extend([
+        "**O que voce precisa fazer no codigo**",
+    ])
+    lines.extend(implementation_lines)
+    lines.extend([
+        "",
         "**Como resolver**",
         "1. Abra `main.c`.",
         "2. Complete a funcao `solve(...)`.",
         "3. Compile com `gcc -Wall -Wextra -std=c11 main.c -o program`.",
-        "4. Execute normalmente com `./program`.",
-        "5. Rode as verificacoes predefinidas com `./program --test`.",
-        "6. Se quiser consultar a resposta comentada, abra `solution.c`.",
+        "4. Rode as verificacoes predefinidas com `./program --test`.",
+        "5. Se quiser consultar a resposta comentada, abra `solution.c`.",
         "",
         "O arquivo `main.c` e o exercicio para resolver. O arquivo `solution.c` contem uma solucao comentada em PT-BR.",
-    ]
+    ])
     return "\n".join(lines) + "\n"
 
 

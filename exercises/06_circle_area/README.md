@@ -20,12 +20,22 @@ Um numero com duas casas decimais.
 12.57
 ```
 
+**Como calcular**
+A area do circulo e calculada multiplicando PI pelo raio ao quadrado.
+Neste exercicio, use `PI = 3.14159`.
+Formula: `PI * raio * raio`.
+
+**O que voce precisa fazer no codigo**
+Na funcao `solve(double value)`, o valor de entrada ja chega pelo parametro `value`.
+Voce deve calcular o resultado pedido e retornar um valor decimal com `return`.
+Voce nao precisa formatar a quantidade de casas decimais dentro de `solve(...)`.
+O `main(...)` deste exercicio ja imprime a resposta com duas casas decimais para voce.
+
 **Como resolver**
 1. Abra `main.c`.
 2. Complete a funcao `solve(...)`.
 3. Compile com `gcc -Wall -Wextra -std=c11 main.c -o program`.
-4. Execute normalmente com `./program`.
-5. Rode as verificacoes predefinidas com `./program --test`.
-6. Se quiser consultar a resposta comentada, abra `solution.c`.
+4. Rode as verificacoes predefinidas com `./program --test`.
+5. Se quiser consultar a resposta comentada, abra `solution.c`.
 
 O arquivo `main.c` e o exercicio para resolver. O arquivo `solution.c` contem uma solucao comentada em PT-BR.

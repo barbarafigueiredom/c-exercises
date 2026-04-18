@@ -29,12 +29,16 @@ Dez linhas no formato number x i = result.
 3 x 10 = 30
 ```
 
+**O que voce precisa fazer no codigo**
+Na funcao `solve(int number, char *output, size_t output_size)`, o numero da tabuada chega em `number`.
+Voce deve montar o texto da resposta dentro de `output`, respeitando o tamanho maximo informado por `output_size`.
+A resposta final deve ficar pronta para ser impressa exatamente como os testes esperam.
+
 **Como resolver**
 1. Abra `main.c`.
 2. Complete a funcao `solve(...)`.
 3. Compile com `gcc -Wall -Wextra -std=c11 main.c -o program`.
-4. Execute normalmente com `./program`.
-5. Rode as verificacoes predefinidas com `./program --test`.
-6. Se quiser consultar a resposta comentada, abra `solution.c`.
+4. Rode as verificacoes predefinidas com `./program --test`.
+5. Se quiser consultar a resposta comentada, abra `solution.c`.
 
 O arquivo `main.c` e o exercicio para resolver. O arquivo `solution.c` contem uma solucao comentada em PT-BR.

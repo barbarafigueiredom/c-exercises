@@ -20,12 +20,15 @@ A palavra EVEN ou ODD.
 ODD
 ```
 
+**O que voce precisa fazer no codigo**
+Na funcao `solve(int value)`, o numero de entrada ja chega pelo parametro `value`.
+Voce deve retornar uma string com a resposta, como `"EVEN"`, `"ODD"`, `"POSITIVE"`, `"NEGATIVE"` ou `"ZERO"`.
+
 **Como resolver**
 1. Abra `main.c`.
 2. Complete a funcao `solve(...)`.
 3. Compile com `gcc -Wall -Wextra -std=c11 main.c -o program`.
-4. Execute normalmente com `./program`.
-5. Rode as verificacoes predefinidas com `./program --test`.
-6. Se quiser consultar a resposta comentada, abra `solution.c`.
+4. Rode as verificacoes predefinidas com `./program --test`.
+5. Se quiser consultar a resposta comentada, abra `solution.c`.
 
 O arquivo `main.c` e o exercicio para resolver. O arquivo `solution.c` contem uma solucao comentada em PT-BR.

@@ -20,12 +20,22 @@ Um numero com duas casas decimais.
 8.30
 ```
 
+**Como calcular**
+Na media ponderada, cada nota e multiplicada pelo seu peso.
+Depois some todos os resultados e divida pela soma dos pesos.
+Formula: `(nota1*peso1 + nota2*peso2 + nota3*peso3) / (peso1 + peso2 + peso3)`.
+
+**O que voce precisa fazer no codigo**
+Na funcao `solve(...)`, todas as notas e pesos ja chegam pelos parametros.
+Voce deve calcular a media ponderada e retornar um valor decimal com `return`.
+Voce nao precisa formatar a quantidade de casas decimais dentro de `solve(...)`.
+O `main(...)` deste exercicio ja imprime a resposta com duas casas decimais para voce.
+
 **Como resolver**
 1. Abra `main.c`.
 2. Complete a funcao `solve(...)`.
 3. Compile com `gcc -Wall -Wextra -std=c11 main.c -o program`.
-4. Execute normalmente com `./program`.
-5. Rode as verificacoes predefinidas com `./program --test`.
-6. Se quiser consultar a resposta comentada, abra `solution.c`.
+4. Rode as verificacoes predefinidas com `./program --test`.
+5. Se quiser consultar a resposta comentada, abra `solution.c`.
 
 O arquivo `main.c` e o exercicio para resolver. O arquivo `solution.c` contem uma solucao comentada em PT-BR.

@@ -20,12 +20,19 @@ Um inteiro: o fatorial de n.
 120
 ```
 
+**Como calcular**
+O fatorial de um numero e calculado multiplicando esse numero por todos os inteiros positivos menores que ele ate chegar em 1.
+Exemplo: `5! = 5 * 4 * 3 * 2 * 1`.
+
+**O que voce precisa fazer no codigo**
+Na funcao `solve(int value)`, o valor de entrada ja chega pelo parametro `value`.
+Voce deve calcular o resultado pedido e retornar um valor inteiro usando `return`.
+
 **Como resolver**
 1. Abra `main.c`.
 2. Complete a funcao `solve(...)`.
 3. Compile com `gcc -Wall -Wextra -std=c11 main.c -o program`.
-4. Execute normalmente com `./program`.
-5. Rode as verificacoes predefinidas com `./program --test`.
-6. Se quiser consultar a resposta comentada, abra `solution.c`.
+4. Rode as verificacoes predefinidas com `./program --test`.
+5. Se quiser consultar a resposta comentada, abra `solution.c`.
 
 O arquivo `main.c` e o exercicio para resolver. O arquivo `solution.c` contem uma solucao comentada em PT-BR.
