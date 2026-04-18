@@ -15,9 +15,11 @@ void print_test_result(int index, const char *input, const char *expected, const
 }
 
 const char *solve(int value) {
-    // TODO: implemente a logica deste exercicio.
-    (void)value;
-    return "TODO";
+    if (value % 2 == 0){
+        return "EVEN";
+    }
+
+    return "ODD";
 }
 
 void run_tests(void) {

@@ -22,7 +22,7 @@ ODD
 
 **O que voce precisa fazer no codigo**
 Na funcao `solve(int value)`, o numero de entrada ja chega pelo parametro `value`.
-Voce deve retornar uma string com a resposta, como `"EVEN"`, `"ODD"`, `"POSITIVE"`, `"NEGATIVE"` ou `"ZERO"`.
+Voce deve retornar uma string com a resposta, como `"EVEN"`, `"ODD"`.
 
 **Como resolver**
 1. Abra `main.c`.
