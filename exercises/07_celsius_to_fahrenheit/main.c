@@ -15,9 +15,8 @@ void print_test_result(int index, const char *input, const char *expected, const
 }
 
 double solve(double value) {
-    // TODO: implemente a logica deste exercicio.
-    (void)value;
-    return 0.0;
+    double f = (value * 9 / 5) + 32;
+    return f;
 }
 
 void run_tests(void) {
