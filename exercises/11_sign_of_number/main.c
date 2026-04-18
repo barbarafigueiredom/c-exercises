@@ -15,9 +15,13 @@ void print_test_result(int index, const char *input, const char *expected, const
 }
 
 const char *solve(int value) {
-    // TODO: implemente a logica deste exercicio.
-    (void)value;
-    return "TODO";
+    if (value < 0) {
+        return "NEGATIVE";
+    } else if (value == 0) {
+        return "ZERO";
+    }
+
+    return "POSITIVE";
 }
 
 void run_tests(void) {
