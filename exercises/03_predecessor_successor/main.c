@@ -15,10 +15,9 @@ void print_test_result(int index, const char *input, const char *expected, const
 }
 
 void solve(int number, int *first, int *second) {
-    // TODO: implemente a logica deste exercicio.
-    (void)number;
-    (void)first;
-    (void)second;
+
+     *first = number - 1;
+     *second = number + 1;
 }
 
 void run_tests(void) {
