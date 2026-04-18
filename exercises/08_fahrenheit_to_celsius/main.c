@@ -14,10 +14,9 @@ void print_test_result(int index, const char *input, const char *expected, const
     printf("Status: %s\n\n", strcmp(expected, actual) == 0 ? "PASS" : "FAIL");
 }
 
-double solve(double value) {
-    // TODO: implemente a logica deste exercicio.
-    (void)value;
-    return 0.0;
+double solve(double value ) {
+    
+    return (value - 32) * 5 / 9; 
 }
 
 void run_tests(void) {
