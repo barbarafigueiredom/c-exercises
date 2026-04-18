@@ -14,12 +14,8 @@ void print_test_result(int index, const char *input, const char *expected, const
     printf("Status: %s\n\n", strcmp(expected, actual) == 0 ? "PASS" : "FAIL");
 }
 
-void solve(int total_seconds, int *hours, int *minutes, int *seconds) {
-    // TODO: implemente a logica deste exercicio.
-    (void)total_seconds;
-    (void)hours;
-    (void)minutes;
-    (void)seconds;
+void solve(int total_seconds, int *hours, int *minutes, int *seconds) {    
+    *hours = total_seconds / 3600;
 }
 
 void run_tests(void) {
