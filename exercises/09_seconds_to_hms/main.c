@@ -16,6 +16,9 @@ void print_test_result(int index, const char *input, const char *expected, const
 
 void solve(int total_seconds, int *hours, int *minutes, int *seconds) {    
     *hours = total_seconds / 3600;
+    int rest_hours = total_seconds % 3600;
+    *minutes = rest_hours / 60;
+    *seconds = rest_hours % 60;
 }
 
 void run_tests(void) {
