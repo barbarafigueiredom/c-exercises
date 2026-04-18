@@ -15,11 +15,8 @@ void print_test_result(int index, const char *input, const char *expected, const
 }
 
 double solve(double a, double b, double c) {
-    // TODO: implemente a logica deste exercicio.
-    (void)a;
-    (void)b;
-    (void)c;
-    return 0.0;
+
+    return (a + b + c) / 3 ;
 }
 
 void run_tests(void) {
