@@ -1,0 +1,40 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Build Current C File",
+      "type": "shell",
+      "command": "gcc",
+      "args": [
+        "-Wall",
+        "-Wextra",
+        "-std=c11",
+        "${file}",
+        "-o",
+        "${fileDirname}/program"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": [
+        "$gcc"
+      ]
+    },
+    {
+      "label": "Run Current C File",
+      "type": "shell",
+      "command": "${fileDirname}/program",
+      "dependsOn": "Build Current C File"
+    },
+    {
+      "label": "Run Current File Tests",
+      "type": "shell",
+      "command": "${fileDirname}/program",
+      "args": [
+        "--test"
+      ],
+      "dependsOn": "Build Current C File"
+    }
+  ]
+}
