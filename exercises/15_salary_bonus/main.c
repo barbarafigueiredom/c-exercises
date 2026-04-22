@@ -15,10 +15,8 @@ void print_test_result(int index, const char *input, const char *expected, const
 }
 
 double solve(double amount, double percentage) {
-    // TODO: implemente a logica deste exercicio.
-    (void)amount;
-    (void)percentage;
-    return 0.0;
+   double porcentagem = (amount * percentage) / 100;
+    return porcentagem + amount;
 }
 
 void run_tests(void) {
