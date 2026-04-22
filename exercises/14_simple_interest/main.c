@@ -15,11 +15,7 @@ void print_test_result(int index, const char *input, const char *expected, const
 }
 
 double solve(double principal, double rate, double time) {
-    // TODO: implemente a logica deste exercicio.
-    (void)principal;
-    (void)rate;
-    (void)time;
-    return 0.0;
+   return ( principal * rate * time) / 100;
 }
 
 void run_tests(void) {
