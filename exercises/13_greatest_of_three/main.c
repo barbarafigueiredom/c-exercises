@@ -15,11 +15,13 @@ void print_test_result(int index, const char *input, const char *expected, const
 }
 
 int solve(int a, int b, int c) {
-    // TODO: implemente a logica deste exercicio.
-    (void)a;
-    (void)b;
-    (void)c;
-    return 0;
+    if  (a >= b && a >= c){
+        return a;
+    }
+    else if (b >= a && b >= c){
+        return b;
+    }
+    return c;
 }
 
 void run_tests(void) {
