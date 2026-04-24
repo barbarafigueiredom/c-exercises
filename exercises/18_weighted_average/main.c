@@ -15,14 +15,7 @@ void print_test_result(int index, const char *input, const char *expected, const
 }
 
 double solve(double grade1, double weight1, double grade2, double weight2, double grade3, double weight3) {
-    // TODO: implemente a logica deste exercicio.
-    (void)grade1;
-    (void)weight1;
-    (void)grade2;
-    (void)weight2;
-    (void)grade3;
-    (void)weight3;
-    return 0.0;
+    return (grade1*weight1 + grade2*weight2 + grade3*weight3) / (weight1 + weight2 + weight3);
 }
 
 void run_tests(void) {
