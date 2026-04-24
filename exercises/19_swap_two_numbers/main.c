@@ -15,11 +15,8 @@ void print_test_result(int index, const char *input, const char *expected, const
 }
 
 void solve(int first_input, int second_input, int *first_output, int *second_output) {
-    // TODO: implemente a logica deste exercicio.
-    (void)first_input;
-    (void)second_input;
-    (void)first_output;
-    (void)second_output;
+    *first_output = second_input;
+    *second_output = first_input;
 }
 
 void run_tests(void) {
