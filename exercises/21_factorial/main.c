@@ -15,9 +15,13 @@ void print_test_result(int index, const char *input, const char *expected, const
 }
 
 unsigned long long solve(int value) {
-    // TODO: implemente a logica deste exercicio.
-    (void)value;
-    return 0ULL;
+    unsigned long long fatorial = 1;
+
+    for (int i = 1; i <= value; i++) {
+        fatorial *= i;
+    }
+
+    return fatorial;
 }
 
 void run_tests(void) {
