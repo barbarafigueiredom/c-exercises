@@ -15,8 +15,25 @@ void print_test_result(int index, const char *input, const char *expected, const
 }
 
 int solve(int value) {
-    // TODO: implemente a logica deste exercicio.
-    (void)value;
+    int sum = 0;
+    int a = 0;
+    int b = 1;
+
+    if (value == 0){
+        return a;
+    }
+
+    if (value == 1){
+        return b;
+    }
+
+        
+    for (int i = 0; i < value; i++) {
+        sum = a + b;
+        a = b + sum;
+        return sum;
+    }
+
     return 0;
 }
 
