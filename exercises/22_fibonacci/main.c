@@ -28,13 +28,13 @@ int solve(int value) {
     }
 
         
-    for (int i = 0; i < value; i++) {
+    for (int i = 2; i <= value; i++) {
         sum = a + b;
-        a = b + sum;
-        return sum;
+        a = b;
+        b = sum;
     }
 
-    return 0;
+    return sum;
 }
 
 void run_tests(void) {
